@@ -1,5 +1,5 @@
 
-# LumeChat
+# AuralineChat
 
 A modern, liquid‑glass chat UI — sleek, artistic, and system‑aware (Light/Dark). Built with **Next.js + React + Tailwind** and crafted for real apps, demos, and design explorations.
 
