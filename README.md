@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# LumeChat
 
-First, run the development server:
+A modern, liquid‑glass chat UI — sleek, artistic, and system‑aware (Light/Dark). Built with **Next.js + React + Tailwind** and crafted for real apps, demos, and design explorations.
+
+> Lume = lumen (light). LumeChat is all about luminous glass, soft gradients, and delightful micro‑interactions.
+
+---
+
+## ✨ Features
+
+- **Liquid‑Glass Aesthetic**: layered blur, subtle gloss, gradient halos, soft shadows.
+- **System Theming**: fully adaptive **Light/Dark** via `prefers-color-scheme` + `dark:` variants.
+- **Hero + Glass Dock**: polished landing with a floating glass dock (Start Chat / GitHub / LinkedIn / Version).
+- **Chat Experience**
+  - Bubbled messages with **grouping**, timestamps, and **read receipts** (sent → delivered → seen).
+  - **Smart Scroll**: sticky top gradient, “**New messages**” pill, **Jump to Latest** button.
+  - **Typing Indicator** with animated dots.
+  - **Quick Replies** for instant demo interactions.
+  - **Reactions** (👍🔥😂❤️😮) with hover toolbar + selected reaction badge.
+  - **Attachments**: drag‑and‑drop / paste / picker (image preview + remove).
+  - **Input**: textarea **auto‑resize**, Enter=send / Shift+Enter=new line.
+  - **Command Palette** (**⌘K / Ctrl+K**): modal with glass UI, ready for action wiring.
+- **Performance‑friendly**: no heavy libs; all effects with Tailwind + lightweight React code.
+- **Accessibility**: focus styles, high‑contrast text, keyboard shortcuts, reduced motion friendly.
+
+---
+
+## 🧱 Tech Stack
+
+- **Next.js (App Router)**
+- **React 18**
+- **Tailwind CSS** (no custom config required)
+- **TypeScript** (recommended)
+
+---
+
+## 🚀 Getting Started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 1) Install dependencies
+pnpm install    # or: npm install / yarn
+
+# 2) Run the dev server
+pnpm dev        # http://localhost:3000
+
+# 3) Build for production
+pnpm build && pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Requires Node 18+.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Project Structure (key parts)
 
-## Learn More
+```
+src/
+  app/
+    layout.tsx          # Global layout: gradients, blobs, system theming
+    page.tsx            # Landing (Hero + Preview + Theming + Glass Dock)
+    chat/
+      page.tsx          # The LumeChat experience (all chat features)
+  styles/
+    globals.css         # Tailwind + base styles
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎮 Keyboard & UX
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Enter** → Send message  
+- **Shift + Enter** → New line  
+- **⌘K / Ctrl+K** → Open Command Palette  
+- **Esc** → Close Command Palette  
+- **Drag & Drop / Paste** → Add image attachments in the input bar
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧪 Implementation Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Reactions and receipts are **demo‑state** only (client‑side).  
+  Wire them to your backend or sockets as needed.
+- Attachments are previewed with `URL.createObjectURL` and **not uploaded** by default.
+- Smart scroll uses a simple bottom‑proximity check; change the threshold to taste.
+- Theming uses Tailwind `dark:` and system `prefers-color-scheme` — no extra plugin.
+
+---
+
+## 🗺️ Roadmap Ideas
+
+- Real‑time via WebSocket (presence, typing, receipts)
+- Search across messages + in‑palette actions
+- Message actions: copy, edit, delete, pin
+- File types: audio recorder + voice notes (waveform), PDF/doc previews
+- Lightbox for media & galleries
+- i18n (RTL/LTR), user mentions, code blocks with copy
+- Unit tests for core UX behaviors
+
+---
+
+## 🖼️ Screenshots (placeholders)
+
+> Replace with your own captures
+
+```
+/public/preview-landing.png
+/public/preview-chat-light.png
+/public/preview-chat-dark.png
+```
+
+---
+
+## 🔗 Naming & Branding
+
+**LumeChat** = luminous chat. Use soft violet ↔ cyan gradients and subtle glass rings.  
+Fonts: modern, geometric; icons minimal; motion gentle.
+
+---
+
+## 📜 License
+
+MIT — do whatever you want, just keep the copyright notice.
+
+---
+
+## 🙌 Credits
+
+Designed & built with care. Inspired by glass morphism, premium OS UIs, and thoughtful micro‑interactions.
